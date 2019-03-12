@@ -4,7 +4,7 @@
   <script src="codes.js"></script>
 </head>
 <body>
-  <div id="leetify" class="page-title" style="text-align: left; margin: 0 0 0 300px;">
+  <div id="leetify" class="page-title" onclick="leetify('SURAJ95')" style="text-align: left; margin: 0 0 0 300px;">
     SURAJK95
   </div>
   <div class="page-title" style="text-align: left; margin: 50px 0 0 300px;">
@@ -25,24 +25,27 @@
   <script>
     window.onload=leetify('SURAJK95');
 
-    function leetifyRoutine(intString){
+    function leetifyRoutine(firstString){
       //console.log(`Hit`);
-      let index = parseInt(Math.random()*intString.length);
-      let options = codes[intString[index]];
-      intString[index]=options[parseInt(Math.random()*options.length)];
-      //console.log(`${options} and ${intString}`);
+      let index = parseInt(Math.random()*firstString.length);
+      let options = codes[firstString[index]];
+      let secondString = firstString;
+      console.log(`${index} and ${firstString[index]} and ${options} and ${firstString}`);
+      secondString[index]=options[parseInt(Math.random()*options.length)];
+
       var leetifyDiv = document.getElementById('leetify');
-      const finalString=intString.join('');
+      const finalString=firstString.join('');
       leetifyDiv.innerHTML=`${finalString}`;
     }
 
     function leetify(inputString){
-      console.log(`leetifying...`);
+      //console.log(`leetifying...`);
 
       var baseString=inputString.split('');
-      var intString=baseString;
-      setInterval(leetifyRoutine,100, intString);
-      //leetifyRoutine(intString);
+      var firstString=baseString;
+      //console.log(`int ${firstString}`);
+      setInterval(leetifyRoutine,200, firstString);
+      //leetifyRoutine(firstString);
 
 
     }
