@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
+
+body{
+  background-color: black;
+  color: white;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.page-title{
+  padding: 20px 0;
+  font-family: 'Share Tech Mono';
+  font-size: 32px;
+}
+
+.intro{
+  padding: 70px 0;
+}
+
+@media (max-width: 1024px){
+  body{
+    font-size: 3em;
+  }
+}
