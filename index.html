@@ -1,53 +1,13 @@
 <head>
   <title>1337IFY</title>
   <link rel="stylesheet" href="style.css">
-  <script src="codes.js"></script>
 </head>
 <body>
-  <div id="leetify" class="page-title" onclick="leetify('SURAJ95')" style="text-align: left; margin: 0 0 0 300px;">
+  <div id="leetify" class="page-title" style="text-align: left; margin: 200px 0 0 500px;">
     SURAJK95
   </div>
-  <div class="page-title" style="text-align: left; margin: 50px 0 0 300px;">
-    surajk95
-    <br/>ABCDEFGHIJKLMNOPQRSTUVWXYZ
-    <br/>abcdefghijklmnopqrstuvwxyz
-    <br/>0123456789
-    <br/>!@#$%&*()-_+=;:/?><
-  </div>
-  <div class="page-title" style="text-align: left; margin: 0 0 0 300px;">
-    <br/>ABCDEFGHIJKLMNOPQRSTUVWXYZ
-    <br/>48<>3#C#11<|__0_O257VU_*V2
-    <br/>@3(_{_9_!LX7____&B$1______
-    <br/>
-    <br/>abcdefghijklmnopqrstuvwxyz
-  </div>
-
+  <script src="leetify.js" async></script>
   <script>
-    window.onload=leetify('SURAJK95');
-
-    function leetifyRoutine(firstString){
-      //console.log(`Hit`);
-      let index = parseInt(Math.random()*firstString.length);
-      let options = codes[firstString[index]];
-      let secondString = firstString;
-      console.log(`${index} and ${firstString[index]} and ${options} and ${firstString}`);
-      secondString[index]=options[parseInt(Math.random()*options.length)];
-
-      var leetifyDiv = document.getElementById('leetify');
-      const finalString=firstString.join('');
-      leetifyDiv.innerHTML=`${finalString}`;
-    }
-
-    function leetify(inputString){
-      //console.log(`leetifying...`);
-
-      var baseString=inputString.split('');
-      var firstString=baseString;
-      //console.log(`int ${firstString}`);
-      setInterval(leetifyRoutine,200, firstString);
-      //leetifyRoutine(firstString);
-
-
-    }
+    window.onload=leetify('SURAJK95', 'white', '32px');
   </script>
 </body>
