@@ -1,15 +1,14 @@
 //leetify v1.0 by surajk95
 
-function leetifyRoutine(firstString){
+function leetifyRoutine(firstString, index){
+  var index=(index+3)%firstString.length;
   var leetifyDiv = document.getElementById('leetify');
-  let index = parseInt(Math.random()*firstString.length);
   let options = codes[firstString[index]];
   let secondString = firstString;
-  //console.log(`${index} and ${firstString[index]} and ${options} and ${firstString}`);
   secondString[index]=options[parseInt(Math.random()*options.length)];
-
   const finalString=firstString.join('');
   leetifyDiv.innerHTML=`${finalString}`;
+  setTimeout(leetifyRoutine, 25, firstString, index);
 }
 
 function leetify(inputString, color='white', fontSize='32px'){
@@ -19,11 +18,7 @@ function leetify(inputString, color='white', fontSize='32px'){
   leetifyDiv.style.fontSize=`${fontSize}`;
   var baseString=inputString.split('');
   var firstString=baseString;
-  //console.log(`int ${firstString}`);
-  setInterval(leetifyRoutine, 35, firstString);
-  //leetifyRoutine(firstString);
-
-
+  leetifyRoutine(firstString, 0);
 }
 
 var codes={
